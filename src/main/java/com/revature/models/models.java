@@ -6,18 +6,18 @@ public class models {
     private String model_name;
     private short model_year;
 
-    private makes make;
+    //private makes make;
 
     //no-args constructor
     public models() {
     }
 
     //all-args for selects (obj instead of fk)
-    public models(makes make, String model_name, short model_year) {
-        this.make = make;
-        this.model_name = model_name;
-        this.model_year = model_year;
-    }
+//    public models(makes make, String model_name, short model_year) {
+//        this.make = make;
+//        this.model_name = model_name;
+//        this.model_year = model_year;
+//    }
 
     //all-args for inserts (fk instead of obj)
     public models(String model_make_fk, String model_name, short model_year) {
@@ -50,13 +50,13 @@ public class models {
         this.model_year = model_year;
     }
 
-    public makes getMake() {
-        return make;
-    }
-
-    public void setMake(makes make) {
-        this.make = make;
-    }
+//    public makes getMake() {
+//        return make;
+//    }
+//
+//    public void setMake(makes make) {
+//        this.make = make;
+//    }
 
     @Override
     public String toString() {
@@ -64,7 +64,7 @@ public class models {
                 "model_make_fk='" + model_make_fk + '\'' +
                 ", model_name='" + model_name + '\'' +
                 ", model_year=" + model_year +
-                ", make=" + make +
+                //", make=" + make +
                 '}';
     }
 }

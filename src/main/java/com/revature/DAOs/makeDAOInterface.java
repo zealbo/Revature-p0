@@ -1,12 +1,15 @@
 package com.revature.DAOs;
 
 import com.revature.models.makes;
+import com.revature.models.models;
+
+import java.util.ArrayList;
 
 public interface makeDAOInterface {
     //Select all items from the items table
-    void getAllMakes();
+    ArrayList<makes> getAllMakes();
     //Select all models by make
-    void getModelsByMake(String make);
+    ArrayList<models> getModelsByMake(String make);
     //Insert new make
     makes insertMake(makes m);
     //update make
@@ -14,5 +17,5 @@ public interface makeDAOInterface {
     //delete make
     void deleteMake(String make);
     //cool functionality
-    void getAllMakesAlphabetical();
+    ArrayList<makes> getAllMakesAlphabetical();
 }
