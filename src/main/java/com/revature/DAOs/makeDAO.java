@@ -12,7 +12,6 @@ public class makeDAO  implements makeDAOInterface{
 
     @Override
     public ArrayList<makes> getAllMakes() {
-
         try(Connection conn = ConnectionUtil.getConnection()){
 
             String sql = "SELECT * FROM makes";
