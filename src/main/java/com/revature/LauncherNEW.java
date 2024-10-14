@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.controllers.ModelController;
 import io.javalin.Javalin;
 
 public class LauncherNEW {
@@ -14,8 +15,14 @@ public class LauncherNEW {
         //you can choose any port, but make sure it's a port that isn't being used
 
         //a very basic callable resource just for fun
+        //we sent a response from launcher here, but responses will really be in the controllers
         app.get("/", ctx -> ctx.result("Hello Javali and Postman"));
 
+        //TODO: We need to instantiate controllers
+        ModelController mc = new ModelController();
+
+        //Get All models
+        app.get("/models", mc.getModelsHandler);
 
     }
 
