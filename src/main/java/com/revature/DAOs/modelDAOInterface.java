@@ -14,7 +14,7 @@ public interface modelDAOInterface {
     //Insert new model
     models insertModel(models m);
     //update model
-    void updateModelYear(String model, short model_year);
+    short updateModelYear(String model, short model_year);
     //delete model
     void deleteModel(String model);
     //cool functionality

@@ -54,7 +54,7 @@ public class modelDAO implements modelDAOInterface{
 
         }catch(SQLException e){
             e.printStackTrace();
-            System.out.println("Couldn't get models by make.");
+            System.out.println("Couldn't get make by models.");
         }
         return null;
     }
@@ -79,7 +79,7 @@ public class modelDAO implements modelDAOInterface{
     }
 
     @Override
-    public void updateModelYear(String model, short model_year) {
+    public short updateModelYear(String model, short model_year) {
         try(Connection conn = ConnectionUtil.getConnection()){
 
             String sql = "UPDATE models SET model_year = ? WHERE model_name = ?";
@@ -87,11 +87,13 @@ public class modelDAO implements modelDAOInterface{
             ps.setShort(1, model_year);
             ps.setString(2, model);
             ps.executeUpdate();
+            return model_year;
 
         }catch(SQLException e){
             e.printStackTrace();
             System.out.println("Couldn't update model year.");
         }
+        return -1; //if update fails
     }
 
     @Override
